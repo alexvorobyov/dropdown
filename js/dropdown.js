@@ -115,7 +115,7 @@ dropdown.Dropdown.prototype.loadData = function(data, filtered) {
     this.itemsIds[item.id] = true;
     this.dataLength++;
 
-    if (filtered && this.filteredData) { //TODO check
+    if (filtered && this.filteredData) {
       this.filteredData[item._id] = item;
     }
   }
@@ -174,7 +174,7 @@ dropdown.Dropdown.prototype.serverFilter = function(query) {
 
   this.activeQuery = dropdown.xhr.xhr(this.dataSourceUrl + '?query=' + encodeURIComponent(query), null, function(error, data) {
     if (!error && data && data.length) {
-      if (this.input.value) { //TODO check
+      if (this.input.value) {
         this.loadData(data, true);
         this._renderItems();
       }
@@ -189,7 +189,7 @@ dropdown.Dropdown.prototype.showList = function() {
 
 dropdown.Dropdown.prototype.toggleExpand = function() {
   if (!this.expanded) {
-    this._renderItems(); //TODO re render
+    this._renderItems();
   }
   this.list.style.display = this.expanded ? 'none' : 'block';
   this.expanded = !this.expanded;
@@ -337,8 +337,6 @@ dropdown.Dropdown.prototype._renderItems = function() {
 
   var dataToRender = this.filteredData || this.data;
   delete this.highlightedItem;
-
-  console.log('rendering items', dataToRender);
 
   var itemsHTML = [];
   var itemsCounter = 0;

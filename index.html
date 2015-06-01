@@ -16,7 +16,8 @@
         window.onload = function() {
             var data = [];
             var data2 = [];
-            var names = ['Саша Воробьев', 'Петр Шершнев', 'Alisa Selezneva', 'Максим Безнадежный', 'Илья deep', 'Андрей Рогозов']
+            var data3 = [];
+            var names = ['Саша Воробьев', 'Петр Шершнев', 'Alisa Selezneva', 'Максим Безнадежный', 'Илья deep', 'Андрей Рогозов'];
 
             for (var i = 0; i < 100; i++) {
                 data.push({
@@ -31,6 +32,11 @@
                         img: 'img/' + Math.floor(Math.random() * 6) + '.jpg'
                     })
                 }
+                data3.push({
+                    id : i,
+                    name : names[Math.floor(Math.random() * 6)],
+                    img : 'img/' + Math.floor(Math.random() * 6) + '.jpg'
+                });
             }
 
             window.d1 = new dropdown.Dropdown({
@@ -53,7 +59,7 @@
             window.d3 = new dropdown.Dropdown({
                 container : "dropdown-container-3",
                 autoRender : true,
-                data : data,
+                data : data3,
                 showAvatars : true,
                 maxSize : 5
             });
@@ -63,16 +69,18 @@
 </head>
 <body>
 
+<h2>Dropdown examples</h2>
+
 <p>
     Dropdown with 100 users and data source.
     <pre>
-    window.d1 = new dropdown.Dropdown({
-        container : "dropdown-container-1",
-        autoRender : true,
-        data : data,
-        showAvatars : true,
-        dataSourceUrl : '/suggest'
-    });
+window.d1 = new dropdown.Dropdown({
+    container : "dropdown-container-1",
+    autoRender : true,
+    data : data,
+    showAvatars : true,
+    dataSourceUrl : '/suggest'
+});
     </pre>
 </p>
 
@@ -82,14 +90,14 @@
 <p>
     Tiny dropdown with single select and 30 users. Data source also provided.
     <pre>
-    window.d2 = new dropdown.Dropdown({
-        container : "dropdown-container-2",
-        autoRender : true,
-        data : data2,
-        singleSelect : true,
-        showAvatars : false,
-        dataSourceUrl : '/suggest'
-    });
+window.d2 = new dropdown.Dropdown({
+    container : "dropdown-container-2",
+    autoRender : true,
+    data : data2,
+    singleSelect : true,
+    showAvatars : false,
+    dataSourceUrl : '/suggest'
+});
     </pre>
 </p>
 
@@ -99,13 +107,13 @@
 <p>
     Dropdown with 100 users without data source with maxSize set to 5.
     <pre>
-    window.d3 = new dropdown.Dropdown({
-        container : "dropdown-container-3",
-        autoRender : true,
-        data : data,
-        showAvatars : true,
-        maxSize : 5
-    });
+window.d3 = new dropdown.Dropdown({
+    container : "dropdown-container-3",
+    autoRender : true,
+    data : data3,
+    showAvatars : true,
+    maxSize : 5
+});
     </pre>
 </p>
 
