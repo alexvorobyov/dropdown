@@ -24,11 +24,13 @@
                     name : names[Math.floor(Math.random() * 6)],
                     img : 'img/' + Math.floor(Math.random() * 6) + '.jpg'
                 });
-                data2.push({
-                    id : i,
-                    name : names[Math.floor(Math.random() * 6)],
-                    img : 'img/' + Math.floor(Math.random() * 6) + '.jpg'
-                })
+                if (i < 30) {
+                    data2.push({
+                        id: i,
+                        name: names[Math.floor(Math.random() * 6)],
+                        img: 'img/' + Math.floor(Math.random() * 6) + '.jpg'
+                    })
+                }
             }
 
             window.d1 = new dropdown.Dropdown({
@@ -47,24 +49,68 @@
                 showAvatars : false,
                 dataSourceUrl : '/suggest'
             });
+
+            window.d3 = new dropdown.Dropdown({
+                container : "dropdown-container-3",
+                autoRender : true,
+                data : data,
+                showAvatars : true,
+                maxSize : 5
+            });
         }
 
     </script>
 </head>
 <body>
 
-<p>Первый дропдаун</p>
+<p>
+    Dropdown with 100 users and data source.
+    <pre>
+    window.d1 = new dropdown.Dropdown({
+        container : "dropdown-container-1",
+        autoRender : true,
+        data : data,
+        showAvatars : true,
+        dataSourceUrl : '/suggest'
+    });
+    </pre>
+</p>
 
 <div class="dropdown-container" id="dropdown-container-1">
-
 </div>
 
-<p>Второй дропдаун</p>
+<p>
+    Tiny dropdown with single select and 30 users. Data source also provided.
+    <pre>
+    window.d2 = new dropdown.Dropdown({
+        container : "dropdown-container-2",
+        autoRender : true,
+        data : data2,
+        singleSelect : true,
+        showAvatars : false,
+        dataSourceUrl : '/suggest'
+    });
+    </pre>
+</p>
 
-<div class="dropdown-container" id="dropdown-container-2">
-
+<div class="dropdown-container" id="dropdown-container-2" style="width: 300px;">
 </div>
 
+<p>
+    Dropdown with 100 users without data source with maxSize set to 5.
+    <pre>
+    window.d3 = new dropdown.Dropdown({
+        container : "dropdown-container-3",
+        autoRender : true,
+        data : data,
+        showAvatars : true,
+        maxSize : 5
+    });
+    </pre>
+</p>
+
+<div class="dropdown-container" id="dropdown-container-3">
+</div>
 
 </body>
 </html>

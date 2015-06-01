@@ -3,6 +3,11 @@ body, input {
     color: #666;
 }
 
+pre {
+    font-size: 11px;
+    color: #C30000;
+}
+
 .dropdown-container {
     width: 600px;
     margin-bottom: 40px;
