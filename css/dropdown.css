@@ -1,0 +1,129 @@
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.vk-dropdown-input {
+    padding: 2px;
+    border: 1px solid #C0CAD5;
+    padding-right: 18px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.vk-dropdown-input:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.vk-dropdown-input input {
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 3px;
+    margin: 9px 0px 10px 0px;
+    outline: none;
+}
+
+.vk-dropdown-input .vk-dropdown-selected {
+}
+
+.vk-dropdown-input .vk-dropdown-selected .vk-dropdown-selected-item {
+    margin: 0px 3px 3px 0px;
+    background: #D0F3FF;
+    border-radius: 2px;
+    padding: 0px 19px 0px 1px;
+    position: relative;
+}
+
+.vk-dropdown-input .vk-dropdown-selected .vk-dropdown-selected-item-close {
+    color: #868686;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    width: 11px;
+    height: 11px;
+    cursor: pointer;
+    background: url(../img/close.gif) top left no-repeat;
+}
+
+.vk-dropdown-input .vk-dropdown-selected .vk-dropdown-selected-item .vk-dropdown-item {
+    cursor: default;
+}
+
+.vk-dropdown-input .vk-dropdown-arrow {
+    color: #999;
+    position: absolute;
+    right: 6px;
+    top: 13px;
+    cursor: pointer;
+}
+
+.vk-dropdown-input input {
+    border: none;
+    float: left;
+}
+
+.vk-dropdown-selected .vk-dropdown-selected-item {
+    float: left;
+}
+
+.vk-dropdown-list {
+    position: absolute;
+    max-height: 390px;
+    background: #fff;
+    overflow: auto;
+    display: none;
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: #C0CAD5;
+    margin-top: -1px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.vk-dropdown-list .vk-dropdown-item:hover, .vk-dropdown-list .vk-dropdown-item-highlighted {
+    background-color: #eafff8;
+}
+
+.vk-dropdown-list .vk-dropdown-item:last-child {
+    border: none;
+}
+
+.vk-dropdown-item {
+    height: 28px;
+    padding: 5px 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.vk-dropdown-list .vk-dropdown-item {
+    border-bottom: 1px solid #C0CAD5;
+}
+
+.vk-dropdown-item img {
+    width: 28px;
+    height: 28px;
+    float: left;
+    line-height: 24px;
+}
+
+.vk-dropdown-item span {
+    padding-left: 5px;
+}
+
+.vk-dropdown-nothing-found {
+    padding: 4px;
+}

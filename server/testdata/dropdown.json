@@ -1,0 +1,52 @@
+[
+  {
+    "id" : "_1",
+    "name" : "yandex.ru",
+    "img" : ""
+  },
+  {
+    "id" : "_2",
+    "name" : "habrahabr.ru",
+    "img" : ""
+  },
+  {
+    "id" : "_3",
+    "name" : "vkontakte.ru",
+    "img" : ""
+  },
+  {
+    "id" : "_4",
+    "name" : "deepbassnine.com",
+    "img" : ""
+  },
+  {
+    "id" : "_5",
+    "name" : "foursquare.com",
+    "img" : ""
+  },
+  {
+    "id" : "_6",
+    "name" : "twitter.com",
+    "img" : ""
+  },
+  {
+    "id" : "_7",
+    "name" : "facebook.com",
+    "img" : ""
+  },
+  {
+    "id" : "_8",
+    "name" : "dnbarena.ru",
+    "img" : ""
+  },
+  {
+    "id" : "_9",
+    "name" : "soundcloud.com",
+    "img" : ""
+  },
+  {
+    "id" : "_10",
+    "name" : "plus.google.com",
+    "img" : ""
+  }
+]

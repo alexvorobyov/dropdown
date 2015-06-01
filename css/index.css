@@ -1,0 +1,9 @@
+body, input {
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #666;
+}
+
+.dropdown-container {
+    width: 600px;
+    margin-bottom: 40px;
+}
