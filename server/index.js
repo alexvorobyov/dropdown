@@ -12,11 +12,11 @@ var filter = function(query) {
     var versions = helpers(query);
     for (var itemId in testdata) {
       var item = testdata[itemId];
-      var itemName = item.name.toLowerCase();
+      var itemName = item.name.toLowerCase().replace(/й/g, 'и').replace(/ё/g, 'е').replace(/ь/g, '').replace(/ъ/g, '');
 
       for (var i = 0, len = versions.length; i < len; i++) {
         var version = versions[i];
-        if (version && new RegExp(version).exec(itemName)) {
+        if (version && new RegExp(version.replace(/([^A-Za-zА-Яа-я])/, '\\$1')).exec(itemName)) {
           filteredData.push(item);
           break;
         }

@@ -74,11 +74,11 @@ dropdown.Dropdown.prototype.filter = function(query) {
 
       if (this.selectedItems[itemId]) continue;
 
-      var itemName = item.name.toLowerCase();
+      var itemName = item._normalizedName;
 
       for (var i = 0, len = versions.length; i < len; i++) {
         var version = versions[i];
-        if (version && new RegExp(version).exec(itemName)) {
+        if (version && new RegExp(version.replace(/([^A-Za-zА-Яа-я])/, '\\$1')).exec(itemName)) {
           filteredData[item._id] = item;
           break;
         }
@@ -111,6 +111,7 @@ dropdown.Dropdown.prototype.loadData = function(data, filtered) {
       continue;
     }
     item._id = ('dropdown-' + Math.random()).replace('.', '');
+    item._normalizedName = item.name.toLowerCase().replace(/й/g, 'и').replace(/ё/g, 'е').replace(/ь/g, '').replace(/ъ/g, '');
     this.data[item._id] = item;
     this.itemsIds[item.id] = true;
     this.dataLength++;

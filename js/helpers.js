@@ -166,7 +166,7 @@ dropdown.helpers = {
 
       for (var i = 0, len = versions.length; i < len; i++) {
         var version = versions[i].replace(/^\s+|\s+$/gm, '');
-        if (version && !~ret.indexOf(version)) ret.push(version);
+        if (version && !~ret.indexOf(version)) ret.push(version.toLowerCase());
       }
 
       return ret;
