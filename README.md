@@ -1,2 +1,72 @@
 # Dropdown
-Dropdown
+UI dropdown replacement for html select with suggestions feature: see filtered options while you type into the field!
+
+# Usage
+## Initialization exapmle
+
+```javascript
+var data = [];
+
+data.push({
+    id : 1,
+    name : 'Foo Bar',
+    img : 'img/1.jpg'
+});
+data.push({
+    id : 1,
+    name : 'Foo Bar',
+    img : 'img/1.jpg'
+});
+
+var d = new dropdown.Dropdown({
+    container : "dropdown-container-1",
+    autoRender : true,
+    data : data,
+    showAvatars : true,
+    dataSourceUrl : '/suggest'
+});
+```
+
+## Options
+<table>
+    <tr>
+        <td>autoRender</td><td>If true dropdown will be auto rendered after creating. Defaults to false. You can call render() manually.</td>
+    </tr>
+    <tr>
+        <td>container</td><td>Id of node or node itself where dropdown will be rendered.</td>
+    </tr>
+    <tr>
+        <td>data</td><td>Array of data for dropdown.</td>
+    </tr>
+    <tr>
+        <td>dataSourceUrl</td><td>Url to fetch additional data from server while you type.</td>
+    </tr>
+    <tr>
+        <td>inputTimeout</td><td>The legth of time in milliseconds after user input ends to start the filtering. Defaults to 200.</td>
+    </tr>
+    <tr>
+        <td>maxSize</td><td>Maximum number of elements to show in expanded list. Defaults to 20.</td>
+    </tr>
+    <tr>
+        <td>cssPrefix</td><td>Prefix of dropdown css classes. Defaults to 'vk'.</td>
+    </tr>
+    <tr>
+        <td>singleSelect</td><td>If only one element selection is allowed. Defaults to false.</td>
+    </tr>
+</table>
+
+
+## API
+<table>
+    <tr>
+        <td>getValue()</td><td>Get array of currently selected dropdown items.</td>
+    </tr>
+</table>
+
+# Demo
+
+http://alexvorobyov.ru/vk/
+
+# Browser support
+
+IE8+, Chrome, Firefox, Safari
