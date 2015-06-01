@@ -85,4 +85,4 @@ http://alexvorobyov.ru/vk/
 Test nodejs server is also provided and can be found in "server" folder. You can run it with nodejs and use as data source for dropdown suggestions.
 
 # Browser support
-IE8+, Chrome, Firefox, Safari
+IE8+, Chrome, Firefox, Safari, Opera 12+
