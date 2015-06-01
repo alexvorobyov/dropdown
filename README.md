@@ -42,7 +42,7 @@ var d = new dropdown.Dropdown({
         <td>dataSourceUrl</td><td>Url to fetch additional data from server while you type.</td>
     </tr>
     <tr>
-        <td>inputTimeout</td><td>The legth of time in milliseconds after user input ends to start the filtering. Defaults to 200.</td>
+        <td>inputTimeout</td><td>The length of time in milliseconds after user input ends to start the filtering. Defaults to 200.</td>
     </tr>
     <tr>
         <td>maxSize</td><td>Maximum number of elements to show in expanded list. Defaults to 20.</td>
@@ -51,7 +51,7 @@ var d = new dropdown.Dropdown({
         <td>cssPrefix</td><td>Prefix of dropdown css classes. Defaults to 'vk'.</td>
     </tr>
     <tr>
-        <td>singleSelect</td><td>If only one element selection is allowed. Defaults to false.</td>
+        <td>singleSelect</td><td>Set to true if only one element selection is allowed. Defaults to false.</td>
     </tr>
 </table>
 
@@ -59,7 +59,19 @@ var d = new dropdown.Dropdown({
 ## API
 <table>
     <tr>
+        <td>deselectItem(itemId)</td><td>To deselect one of dropdown items. itemId is internal auto-generated id of dropdown item.</td>
+    </tr>
+    <tr>
+        <td>filter(query)</td><td>To filter dropdown items with query.</td>
+    </tr>
+    <tr>
         <td>getValue()</td><td>Get array of currently selected dropdown items.</td>
+    </tr>
+    <tr>
+        <td>render()</td><td>Manually render the dropdown.</td>
+    </tr>
+    <tr>
+        <td>selectItem(itemId)</td><td>To select one of dropdown items. itemId is internal auto-generated id of dropdown item.</td>
     </tr>
 </table>
 
