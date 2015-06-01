@@ -55,14 +55,16 @@ var d = new dropdown.Dropdown({
     </tr>
 </table>
 
-
 ## API
 <table>
     <tr>
         <td>deselectItem(itemId)</td><td>To deselect one of dropdown items. itemId is internal auto-generated id of dropdown item.</td>
     </tr>
     <tr>
-        <td>filter(query)</td><td>To filter dropdown items with query.</td>
+        <td>destroy()</td><td>Destroys dropdown.</td>
+    </tr>
+    <tr>
+        <td>filter(query)</td><td>To filter dropdown items by name with text query.</td>
     </tr>
     <tr>
         <td>getValue()</td><td>Get array of currently selected dropdown items.</td>
@@ -79,6 +81,8 @@ var d = new dropdown.Dropdown({
 
 http://alexvorobyov.ru/vk/
 
-# Browser support
+# Server
+Test nodejs server is also provided and can be found in "server" folder. You can run it with nodejs and use as data source for dropdown suggestions.
 
+# Browser support
 IE8+, Chrome, Firefox, Safari
