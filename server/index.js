@@ -12,7 +12,7 @@ var filter = function(query) {
     var versions = helpers(query);
     for (var itemId in testdata) {
       var item = testdata[itemId];
-      var itemName = item.name.toLowerCase().replace(/й/g, 'и').replace(/ё/g, 'е').replace(/ь/g, '').replace(/ъ/g, '');
+      var itemName = item.name.toLowerCase().replace(/й/g, 'и').replace(/ё/g, 'е').replace(/ь/g, '').replace(/ъ/g, '').replace(/ь/g, '');
 
       for (var i = 0, len = versions.length; i < len; i++) {
         var version = versions[i];
