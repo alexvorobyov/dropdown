@@ -127,7 +127,7 @@ dropdown.Dropdown.prototype.render = function() {
   if (!this.container) return;
 
   var dropDownHTML = '<div class="' + this.cssPrefix + '-dropdown-input">' +
-    '<div class="' + this.cssPrefix + '-dropdown-selected"></div><input placeholder="Enter name or email" type="text" /><div class="' + this.cssPrefix + '-dropdown-arrow">&#9660;</div>' +
+    '<div class="' + this.cssPrefix + '-dropdown-selected"></div><input placeholder="Enter name or email" type="text" autocomplete="false" /><div class="' + this.cssPrefix + '-dropdown-arrow">&#9660;</div>' +
     '</div>' +
     '<div class="' + this.cssPrefix + '-dropdown-list"></div>';
 
@@ -265,6 +265,7 @@ dropdown.Dropdown.prototype._handleArrowKeys = function(keyCode) {
     }
   }
   var ids = Object.keys(data);
+  ids = ids.slice(0, this.maxSize + 1);
   var highlight = null;
   var multiplier = keyCode == 40 ? 1 : -1;
 
@@ -287,8 +288,16 @@ dropdown.Dropdown.prototype._handleArrowKeys = function(keyCode) {
     if (this.prevHighlighted) {
       this.prevHighlighted.className = this.prevHighlighted.className.replace(this.cssPrefix + '-dropdown-item-highlighted', '');
     }
+    var listHeight = this.list.clientHeight;
+    var listScrollTop = this.list.scrollTop;
     var toHighlight = document.getElementById(data[ids[highlight]]._id);
     toHighlight.className += ' ' + this.cssPrefix + '-dropdown-item-highlighted';
+    if (toHighlight.offsetTop >= listHeight + listScrollTop) {
+      this.list.scrollTop = toHighlight.offsetTop - listHeight + toHighlight.clientHeight;
+    }
+    else if (toHighlight.offsetTop < this.list.scrollTop) {
+      this.list.scrollTop = toHighlight.offsetTop;
+    }
     this.prevHighlighted = toHighlight;
     this.highlightedItem = highlight;
   }
