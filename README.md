@@ -13,7 +13,7 @@ data.push({
     img : 'img/1.jpg'
 });
 data.push({
-    id : 1,
+    id : 2,
     name : 'Foo Bar',
     img : 'img/1.jpg'
 });
@@ -36,7 +36,7 @@ var d = new dropdown.Dropdown({
         <td>container</td><td>Id of node or node itself where dropdown will be rendered.</td>
     </tr>
     <tr>
-        <td>data</td><td>Array of data for dropdown.</td>
+        <td>data</td><td>Array of data.</td>
     </tr>
     <tr>
         <td>dataSourceUrl</td><td>Url to fetch additional data from server while you type.</td>
