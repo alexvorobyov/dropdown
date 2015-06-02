@@ -167,7 +167,7 @@ dropdown.Dropdown.prototype.selectItem = function(itemId) {
 };
 
 dropdown.Dropdown.prototype.serverFilter = function(query) {
-  if (!this.dataSourceUrl) return;
+  if (!this.dataSourceUrl || !query.split(' ').join('')) return;
 
   if (this.activeQuery) {
     this.activeQuery.abort();
