@@ -77,7 +77,7 @@ dropdown.Dropdown.prototype.filter = function(query) {
       var itemName = item._normalizedName;
 
       for (var i = 0, len = versions.length; i < len; i++) {
-        var version = versions[i];
+        var version = this._replaceLetters(versions[i]);
         if (version && new RegExp(version.replace(/([^A-Za-zА-Яа-я])/, '\\$1')).exec(itemName)) {
           filteredData[item._id] = item;
           break;
@@ -111,7 +111,7 @@ dropdown.Dropdown.prototype.loadData = function(data, filtered) {
       continue;
     }
     item._id = ('dropdown-' + Math.random()).replace('.', '');
-    item._normalizedName = item.name.toLowerCase().replace(/й/g, 'и').replace(/ё/g, 'е').replace(/ь/g, '').replace(/ъ/g, '');
+    item._normalizedName = this._replaceLetters(item.name.toLowerCase());
     this.data[item._id] = item;
     this.itemsIds[item.id] = true;
     this.dataLength++;
@@ -364,6 +364,10 @@ dropdown.Dropdown.prototype._renderItems = function() {
 
   this.list.innerHTML = itemsHTML.length ? itemsHTML.join('') : (this.input.value ? '<div class="' + this.cssPrefix + '-dropdown-nothing-found">Nothing found</span>' : '');
 };
+
+dropdown.Dropdown.prototype._replaceLetters = function(str) {
+  return (str || '').replace(/й/g, 'и').replace(/ё/g, 'е').replace(/ь/g, '').replace(/ъ/g, '').replace(/ь/g, '');
+}
 
 dropdown.Dropdown.prototype._updateInput = function() {
   this.input.style.width = 'auto';
