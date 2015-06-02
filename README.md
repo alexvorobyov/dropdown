@@ -14,8 +14,8 @@ data.push({
 });
 data.push({
     id : 2,
-    name : 'Foo Bar',
-    img : 'img/1.jpg'
+    name : 'Bar Bar',
+    img : 'img/2.jpg'
 });
 
 var d = new dropdown.Dropdown({
